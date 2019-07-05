@@ -11,15 +11,15 @@ export class DashBoardComponent implements OnInit {
   navItems: Array<any> = [
     {
       name: 'Home',
-      rout: '/home'
+      route: '/home'
     },
     {
       name: 'Users',
-      rout: '/users'
+      route: '/users'
     },
     {
       name: 'Service Providers',
-      rout: '/service-providers'
+      route: '/service-providers'
     }
   ]
 
@@ -32,7 +32,9 @@ export class DashBoardComponent implements OnInit {
   }
 
   navTo(page) {
-    this.router.navigate([page.rout]);
+    this.router.navigate([page.route]);
   }
+
+  
 
 }

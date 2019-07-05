@@ -8,9 +8,9 @@ import { ServiceProvidersComponent } from './components/service-providers/servic
 
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'users', component: UsersComponent },
   { path: 'service-providers', component: ServiceProvidersComponent },
-  { path: 'home', component: HomeComponent },
   { path: 'dash-board', component: DashBoardComponent }
 ];
 

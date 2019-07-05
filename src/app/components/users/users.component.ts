@@ -33,6 +33,7 @@ export class UsersComponent implements OnInit {
         cellPhone: 471234567
       }
     ];
+
   }
 
   ngOnInit() {
