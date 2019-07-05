@@ -19,7 +19,7 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     ChartsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
