@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { ServiceProvidersComponent } from './components/service-providers/service-providers.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
     //UserComponent,
     UsersComponent,
     ServiceProvidersComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
