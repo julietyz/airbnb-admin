@@ -19,4 +19,17 @@
       </tr>
     </tbody>
   </table>
+  <div>
+      <div>
+        <h4 style="text-align: center">What Types of Properties are Available?</h4>
+        <div style="display: block">
+          <canvas baseChart
+            [datasets]="radarChartData"
+            [options]="radarChartOptions"
+            [labels]="radarChartLabels"
+            [chartType]="radarChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
 </div>

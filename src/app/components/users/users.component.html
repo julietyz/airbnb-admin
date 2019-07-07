@@ -1,4 +1,5 @@
 <h3>Users</h3>
+
 <div class="table-responsive">
   <table class="table table-striped table-sm">
     <thead>
@@ -18,4 +19,18 @@
       </tr>
     </tbody>
   </table>
+
+  <div>
+      <div>
+        <h4 style="text-align: center">Reason For Booking</h4>
+        <div style="display: block">
+          <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+
 </div>

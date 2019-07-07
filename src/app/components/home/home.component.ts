@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
-  { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-  { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+  { data: [65, 59, 80, 81, 56, 55, 40], label: 'Users' },
+  { data: [28, 48, 40, 19, 86, 27, 90], label: 'Service Providers' }
 ];
 
 constructor() { }

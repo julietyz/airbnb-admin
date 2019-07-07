@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { ChartType } from 'chart.js';
+import { MultiDataSet, Label } from 'ng2-charts';
+
 
 @Component({
   selector: 'app-users',
@@ -9,6 +12,16 @@ import { UserService } from '../../services/user.service';
 export class UsersComponent implements OnInit {
 
   users: Array<any>;
+
+  // Doughnut
+  public doughnutChartLabels: Label[] = ['Family Vacation', 'Buisiness', 'Friend Group Getaway', 'Honeymoon'];
+  public doughnutChartData: MultiDataSet = [
+    [350, 450, 100, 50],
+    //[50, 150, 120],
+    //[250, 130, 70],
+  ];
+  public doughnutChartType: ChartType = 'doughnut';
+
 
   constructor(
     private userService: UserService
@@ -37,6 +50,15 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  // events
+  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
+    console.log(event, active);
+  }
+
+  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
+    console.log(event, active);
   }
 
 }

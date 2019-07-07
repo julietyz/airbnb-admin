@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartDataSets, ChartType, RadialChartOptions } from 'chart.js';
+import { Label } from 'ng2-charts';
+
 
 @Component({
   selector: 'app-service-providers',
@@ -9,7 +12,20 @@ export class ServiceProvidersComponent implements OnInit {
 
   serviceProviders: Array<any>;
 
-  constructor( ) {
+    // Radar
+    public radarChartOptions: RadialChartOptions = {
+      responsive: true,
+    };
+    public radarChartLabels: Label[] = ['Beach', 'Suburb', 'City Center', 'Mountains', 'Forest'];
+  
+    public radarChartData: ChartDataSets[] = [
+      { data: [65, 59, 90, 81, 56], label: 'Apartnments' },
+      { data: [70, 48, 40, 19, 96], label: 'Houses' }
+    ];
+    public radarChartType: ChartType = 'radar';
+
+
+  constructor() {
     this.serviceProviders = [
       {
         name: 'Joe',
@@ -31,4 +47,12 @@ export class ServiceProvidersComponent implements OnInit {
   ngOnInit() {
   }
 
+   // events
+   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
+    console.log(event, active);
+  }
+
+  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
+    console.log(event, active);
+  }
 }
