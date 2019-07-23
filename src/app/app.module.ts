@@ -7,6 +7,8 @@ import { UsersComponent } from './components/users/users.component';
 import { ServiceProvidersComponent } from './components/service-providers/service-providers.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     ChartsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

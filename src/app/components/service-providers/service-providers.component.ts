@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartType, RadialChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { ListingService } from '../../services/listing.service';
+import { BookingService } from '../../services/booking.service';
+import { UserService } from '../../services/user.service';
+import { ProviderService } from '../../services/provider.service';
 
 
 @Component({
@@ -11,6 +15,10 @@ import { Label } from 'ng2-charts';
 export class ServiceProvidersComponent implements OnInit {
 
   serviceProviders: Array<any>;
+  listings: any;
+  bookings: any;
+  users: any;
+  providers: any;
 
     // Radar
     public radarChartOptions: RadialChartOptions = {
@@ -25,7 +33,15 @@ export class ServiceProvidersComponent implements OnInit {
     public radarChartType: ChartType = 'radar';
 
 
-  constructor() {
+  constructor(
+    private userService: UserService,
+    private listingService: ListingService,
+    private bookingService: BookingService,
+    private providerService: ProviderService
+
+
+
+  ) {
     this.serviceProviders = [
       {
         name: 'Joe',
@@ -45,6 +61,27 @@ export class ServiceProvidersComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.providerService.getAll().then(res=>{
+      this.providers = res;
+      console.log(res);
+    }).catch(err => {console.log(err)})
+
+    this.listingService.getAll().then(res=>{
+      this.listings = res;
+      console.log(res);
+    }).catch(err => {console.log(err)})
+
+    this.bookingService.getAll().then(res=>{
+      this.bookings = res;
+      console.log(res);
+    }).catch(err => {console.log(err)})
+
+  }
+
+  getUserByID(userID){
+    this.userService.getById(userID).then(res=>{
+      return res;
+    }).catch(err => {console.log(err)})
   }
 
    // events

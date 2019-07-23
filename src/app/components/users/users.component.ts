@@ -11,7 +11,8 @@ import { MultiDataSet, Label } from 'ng2-charts';
 })
 export class UsersComponent implements OnInit {
 
-  users: Array<any>;
+  users: any;
+
 
   // Doughnut
   public doughnutChartLabels: Label[] = ['Family Vacation', 'Buisiness', 'Friend Group Getaway', 'Honeymoon'];
@@ -25,7 +26,7 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private userService: UserService
-  ) {
+  ) {/* 
     this.users = [
       {
         name: 'Byron',
@@ -45,11 +46,16 @@ export class UsersComponent implements OnInit {
         email: 'jess@mail.com',
         cellPhone: 471234567
       }
-    ];
+    ]; */
 
   }
 
   ngOnInit() {
+
+    this.userService.getAllUsersBackend().then(res=>{
+      this.users = res;
+      console.log(res);
+    }).catch(err => {console.log(err)})
   }
 
   // events
